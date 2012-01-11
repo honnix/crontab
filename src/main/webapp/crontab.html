@@ -1,0 +1,28 @@
+<lift:surround with="default" at="content">
+  <h1>Current crontab</h1>
+  <p>
+    <lift:crontab.list>
+      <div>
+        <table>
+          <tr>
+            <th>Minute</th>
+            <th>Hour</th>
+            <th>Mobile</th>
+            <th>Message</th>
+            <th>Action</th>
+          </tr>
+          <crontab:entries>
+            <td><cronJob:minute /></td>
+            <td><cronJob:hour /></td>
+            <td><cronJob:mobile /></td>
+            <td><cronJob:message /></td>
+            <td><cronJob:actions /></td>
+          </crontab:entries>
+        </table>
+      </div>
+      <div>
+        <crontab:add />
+      </div>
+    </lift:crontab.list>
+  </p>
+</lift:surround>

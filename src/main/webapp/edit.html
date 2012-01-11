@@ -1,0 +1,23 @@
+<lift:surround with="default" at="content">
+  <h1>Edit cron job</h1>
+    <lift:crontab.edit form="POST">
+      <cronJob:id />
+      <div>
+        <table>
+          <tr>
+            <th>Minute</th>
+            <th>Hour</th>
+            <th>Mobile</th>
+            <th>Message</th>
+          </tr>
+          <tr>
+            <td><cronJob:minute /></td>
+            <td><cronJob:hour /></td>
+            <td><cronJob:mobile /></td>
+            <td><cronJob:message /></td>
+          </tr>
+        </table>
+        <cronJob:save />
+      </div>
+    </lift:crontab.edit>
+</lift:surround>

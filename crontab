@@ -1,0 +1,20 @@
+# for vixie cron
+#
+# $Header: /var/cvsroot/gentoo-x86/sys-process/vixie-cron/files/crontab-3.0.1-r4,v 1.1 2005/03/04 23:59:48 ciaranm Exp $
+#
+#
+
+# Global variables
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+HOME=/
+
+# check scripts in cron.hourly, cron.daily, cron.weekly and cron.monthly
+0  *  * * *	root	rm -f /var/spool/cron/lastrun/cron.hourly
+1  3  * * *	root	rm -f /var/spool/cron/lastrun/cron.daily
+15 4  * * 6	root	rm -f /var/spool/cron/lastrun/cron.weekly
+30 5  1 * *	root	rm -f /var/spool/cron/lastrun/cron.monthly
+*/10  *  * * *	root	test -x /usr/sbin/run-crons && /usr/sbin/run-crons 
+11 11 * * * root    /bin/echo -e "@13816082319\n2222" > /var/lib/smsd/12735940732531316448550.sms
+11 11 * * * root    /bin/echo -e "@13816082319\n1111" > /var/lib/smsd/1273594073253899127072.sms
